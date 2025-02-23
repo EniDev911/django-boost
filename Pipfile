@@ -10,6 +10,7 @@ pymdown-extensions = "*"
 mkdocs-material-extensions = "*"
 mkdocs-glightbox = "*"
 mkdocs-macros-plugin = "*"
+mkdocs-i18n = "*"
 
 [dev-packages]
 
