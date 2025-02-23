@@ -2,18 +2,17 @@
 date: 2024-08-14
 title: Personalizar el Panel Administrativo de Django
 tags: ["admin", "customizar"]
+categories:
+  - Admin
+authors:
+  - mcherrera
 ---
 
 Django es conocido por su rapidez en el desarrollo y su potente sistema de administración listo para usarse. Desde el momento en que creas un nuevo proyecto con Django, el panel de administración se configura automáticamente, ofreciendo una interfaz para gestionar modelos, usuarios, permisos y mucho más. Sin embargo, es común que, a medida que avanzamos en el desarrollo de nuestra aplicación, necesitemos personalizar este panel para adaptarlo a las necesidades específicas de nuestro proyecto. Afortunadamente, Django facilita esta personalización tanto en términos de apariencia como de funcionalidad.
 
 <!-- more -->
+{% include "includes/generate-project.html" %}
 
-## **Prepararando el Escenario**
-
-Antes de acceder al panel administrativo, debemos contar con un proyecto de Django. Para ello debemos seguir los siguientes pasos:
-
-{% set project = "custom-admin-django" %}
-{% include "includes/new-project.html" %}
 
 ## **Configurar el Panel Administrativo**
 

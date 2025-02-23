@@ -1,0 +1,15 @@
+# Título del Documento
+
+Este es un ejemplo de contenido Markdown.
+
+## Subtítulo
+
+- Elemento 1
+- Elemento 2
+
+[Enlace a Google](https://www.google.com)
+
+
+```py title="bash"
+print("Hola Mundo")
+```

@@ -2,15 +2,12 @@
 date: 2024-01-31
 title: "Objetos request y response"
 categories:
-  - Django
   - Views
 ---
 
 Cuando trabajamos con Django, nos enfrentamos constantemente a dos objetos fundamentales: `request` y `response`. Estos son los componentes que permiten la interacción entre el navegador del usuario y el servidor web. En este post, vamos a desglosar qué son estos objetos, como funcionan, etc.
 
 <!-- more -->
-
-
 
 ## **¿Qué es el objeto request en Django?**
 

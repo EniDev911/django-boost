@@ -2,10 +2,12 @@ site_name: Django Boost
 
 extra_css:
   - assets/stylesheets/fontawesome.css
+  - assets/stylesheets/sweetalert2.min.css
   - assets/stylesheets/extra.css
 hooks:
   - hooks/socialmedia.py
 extra_javascript:
+  - javascripts/libs/sweetalert2.all.min.js
   - javascripts/extra.js
   - javascripts/shortcuts.js
 
@@ -25,7 +27,7 @@ theme:
 
   custom_dir: overrides
   palette:
-    # Palette toggle for light mode
+    # Light mode
     - scheme: default
       primary: teal
       accent: teal
@@ -33,7 +35,7 @@ theme:
         icon: material/brightness-7
         name: Cambiar a modo oscuro
 
-    # Palette toggle for dark mode
+    # Dark mode
     - scheme: slate
       primary: teal
       accent: teal
@@ -70,7 +72,9 @@ nav:
       - instalar-django.md
       - crear-nueva-app.md
       - configurar-una-vista.md
-  - Blog: blog/index.md
+  - Blog:
+      - blog/index.md
+      - blog/tags.md
 
 markdown_extensions:
   - abbr
@@ -95,8 +99,6 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
   - pymdownx.superfences
-
-plugins:
 
 plugins:
   # - social:
@@ -137,6 +139,9 @@ plugins:
       blog_toc: true
       post_date_format: short # long | medium | short
       post_url_format: "{slug}" # "{date}/{slug}"
+      pagination_per_page: 4
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      authors_file: "{blog}/.authors.yml"
   - macros:
       module_name: set_image_url
 

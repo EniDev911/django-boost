@@ -4,6 +4,7 @@ icon: material/folder-multiple-plus
 
 # Configurar un Entorno Virtual
 
+
 Cuando instalamos [Python3](https://www.python.org/ "Sitio web de Python"){:target='blank'}, se crea un único entorno global compartido por todos los proyectos y todo el código de Python. Aunque es posible instalar [Django](https://www.djangoproject.com/ "Sitio web de Django"){:target=':_blank'} y otros paquetes en el entorno global, esto limita la posibilidad de gestionar múltiples versiones de cada paquete.
 
 !!! warning "Cuidado"
@@ -111,5 +112,3 @@ mkvirtualenv nombre_entorno
 ```bash title="bash"
 rmvirtualenv nombre_entorno
 ```
-
-[Instalar Django]({{ page.next_page.url }}){ .md-button .md-button--primary }
