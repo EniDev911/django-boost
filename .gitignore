@@ -1,0 +1,5 @@
+Pipfile.lock
+venv/
+docs/assets/**/*.png
+
+generated/

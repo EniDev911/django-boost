@@ -1,0 +1,148 @@
+site_name: Django Boost
+
+extra_css:
+  - assets/stylesheets/fontawesome.css
+  - assets/stylesheets/extra.css
+hooks:
+  - hooks/socialmedia.py
+extra_javascript:
+  - scripts/hello_word.js
+
+theme:
+  name: material
+  favicon: assets/images/logo.png # logo: pending
+  icon:
+    logo: material/home-city
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Cambiar a modo oscuro
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Cambiar a modo claro
+    # accent: teal
+  language: es
+  font:
+    code: Nerd # Nerd
+  features:
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    # - navigation.indexes
+    - navigation.prune
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - navigation.sections
+    - navigation.expand
+    - navigation.footer
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tooltips
+    - content.action.edit
+    - content.action.view
+nav:
+  - "Inicio Rápido":
+      - configurar-entorno-virtual.md
+      - instalar-django.md
+      - crear-nueva-app.md
+      - configurar-una-vista.md
+  - Blog: blog/index.md
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - md_in_html
+  - pymdownx.snippets
+  - pymdownx.keys
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - i18n:
+      languages:
+        es: "Español"
+        en: "English"
+      default_language: "es"
+      no_translation:
+        en: ""
+        #en: "This page isn't translated to English."
+        es: "Esta página no está traducida al español."
+      translate_nav:
+        en:
+          section title: "Section"
+          subsection: "Subsection"
+          page title: "Page with title translated"
+        es:
+          section title: "Sección"
+          subsection: "Subsección"
+          page title: "Página con título traducido"
+
+      # default_language: es
+      # languages:
+      #   en: "Inglés"
+      #   es: "Español"
+  - tags
+  - glightbox:
+      shadow: true
+      caption_position: bottom
+      zoomable: true
+      effect: fade # zoom | fade | none
+      slide_effect: slide
+      draggable: true
+      auto_caption: true
+  - blog:
+      blog_toc: true
+      post_date_format: short # long | medium | short
+      post_url_format: "{slug}" # "{date}/{slug}"
+  - macros:
+      module_name: set_image_url
+
+copyright: Copyright &copy; 2024 @mcherrera
+
+extra:
+  alternate:
+    - name: "Español (Inicio)"
+      link: ""
+      lang: es
+
+    - name: "Inglés (Home)"
+      link: index.en/
+      lang: en
+
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      name: enidev911
+      link: https://github.com/enidev911
+    - icon: /material/mailbox
+      name: contacto
+      link: mailto:contacto@mcherrera.dev
