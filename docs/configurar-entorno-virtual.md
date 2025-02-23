@@ -14,14 +14,12 @@ Cuando instalamos [Python3](https://www.python.org/ "Sitio web de Python"){:targ
 Como resultado, los desarrolladores experimentados suelen configuran y ejecutan las aplicaciones Python dentro de [entornos virtuales Python](https://docs.python.org/es/3/tutorial/venv.html){:target='blank'} independientes.
 
 
-<script src="https://kit.fontawesome.com/6b8f0c7049.js" crossorigin="anonymous"></script>
-
 
 <div style="text-align:center" class="mermaid-container">
 <div class="mermaid-title">Esquema de Entornos Virtuales de Python</div>
 ```mermaid
 graph TD
-    B(<img src="https://enidev911.github.io/fullstack-python/assets/img/base.png" width='28' />Python 3.9)
+    B(<img src="https://enidev911.github.io/fullstack-python/assets/img/base.png" width="18" />Python 3.9)
     B---T[Entornos Virtuales]
     T-->C(<img src="https://enidev911.github.io/fullstack-python/assets/img/venv1.png" width='28' />Python 3.9)
     T-->D(<img src="https://enidev911.github.io/fullstack-python/assets/img/venv2.png" width='28' />Python 3.9)
@@ -55,7 +53,7 @@ Este paquete es una extensión de `virtualenv` que facilita la gestión y organi
 	```
 
 
-A continuación se añade las siguientes líneas en el archivo de inicio del shell (éste es un archivo oculto `.bashrc` o `.zshrc` si usas [zsh](https://en.wikipedia.org/wiki/Z_shell))
+Ahora, añade las siguientes líneas en el archivo de inicio del shell (`.bashrc` o `.zshrc` si usas [zsh](https://en.wikipedia.org/wiki/Z_shell)):
 
 === ":octicons-file-code-16: `.bashrc`"
 	```bash hl_lines="1 3"
@@ -113,3 +111,5 @@ mkvirtualenv nombre_entorno
 ```bash title="bash"
 rmvirtualenv nombre_entorno
 ```
+
+[Instalar Django]({{ page.next_page.url }}){ .md-button .md-button--primary }

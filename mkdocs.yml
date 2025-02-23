@@ -6,13 +6,24 @@ extra_css:
 hooks:
   - hooks/socialmedia.py
 extra_javascript:
-  - scripts/hello_word.js
+  - javascripts/extra.js
+  - javascripts/shortcuts.js
+
+repo_name: enidev911/django-boost
+repo_url: https://github.com/enidev911/django-boost
+edit_uri: edit/main/docs/
 
 theme:
   name: material
   favicon: assets/images/logo.png # logo: pending
   icon:
     logo: material/home-city
+    repo: material/github
+    tag:
+      admin: fontawesome/solid/circle-user
+      customizar: simple/html5
+
+  custom_dir: overrides
   palette:
     # Palette toggle for light mode
     - scheme: default
@@ -86,31 +97,34 @@ markdown_extensions:
   - pymdownx.superfences
 
 plugins:
-  - search
-  - i18n:
-      languages:
-        es: "Español"
-        en: "English"
-      default_language: "es"
-      no_translation:
-        en: ""
-        #en: "This page isn't translated to English."
-        es: "Esta página no está traducida al español."
-      translate_nav:
-        en:
-          section title: "Section"
-          subsection: "Subsection"
-          page title: "Page with title translated"
-        es:
-          section title: "Sección"
-          subsection: "Subsección"
-          page title: "Página con título traducido"
 
-      # default_language: es
-      # languages:
-      #   en: "Inglés"
-      #   es: "Español"
-  - tags
+plugins:
+  # - social:
+  #     cards_layout_options:
+  #       background_color: transparent
+  - search
+  # - i18n:
+  #     languages:
+  #       es: "Español"
+  #       en: "English"
+  #     default_language: "es"
+  #     no_translation:
+  #       en: ""
+  #       #en: "This page isn't translated to English."
+  #       es: "Esta página no está traducida al español."
+  #     translate_nav:
+  #       en:
+  #         section title: "Section"
+  #         subsection: "Subsection"
+  #         page title: "Page with title translated"
+  #       es:
+  #         section title: "Sección"
+  #         subsection: "Subsección"
+  #         page title: "Página con título traducido"
+
+  - tags:
+      tags_file: tags.md
+
   - glightbox:
       shadow: true
       caption_position: bottom
@@ -129,15 +143,17 @@ plugins:
 copyright: Copyright &copy; 2024 @mcherrera
 
 extra:
-  alternate:
-    - name: "Español (Inicio)"
-      link: ""
-      lang: es
+  # alternate:
+  #   - name: "Español (Inicio)"
+  #     link: ""
+  #     lang: es
 
-    - name: "Inglés (Home)"
-      link: index.en/
-      lang: en
-
+  #   - name: "Inglés (Home)"
+  #     link: index.en/
+  #     lang: en
+  tags:
+    admin: admin
+    customizar: customizar
   generator: false
   social:
     - icon: fontawesome/brands/github

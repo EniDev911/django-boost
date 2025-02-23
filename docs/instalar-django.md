@@ -8,21 +8,21 @@ icon: material/rocket
 
 === "Instalar última versión disponible"
 
-	```plaintext title="bash"
+	```plaintext title="terminal"
 	pip3 install django
 	```
 
 === "Instalar versión específica"
 
-	```plaintext title="bash"
+	```plaintext title="terminal"
 	pip3 install django==3.2
 	```
 
-Podemos comprobar que está instalado Django ejecutando el siguiente comando (el comando comprueba que Python puede encontrar el módulo Django):
+Para verificar que Django está instalado, ejecuta el siguiente comando. Este comprobará que Python puede localizar el módulo Django:
 
-```bash title="bash"
+
+```bash title="terminal"
 python3 -m django --version
-# 3.2.4
 ```
 
 ### Generar un nuevo proyecto

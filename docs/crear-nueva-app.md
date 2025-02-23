@@ -4,7 +4,7 @@ icon: material/application-cog-outline
 
 Django distingue entre proyectos y aplicaciones. Una aplicación es un paquete de Python con una estructura determinada (modelos, vistas, plantillas, etc). Un proyecto es (además de un paquete de Python) un conjunto de aplicaciones con una configuración común.
 
-## Crear una nueva aplicación
+## **Crear una nueva aplicación**
 
 Una vez generado el proyecto con django-admin abrimos la terminal a la altura del archivo `manage.py` y ejecutamos el siguiente comando:
 
@@ -13,7 +13,7 @@ python3 manage.py startapp myapp
 ```
 
 ???+ tree "Explorador"
-	```plaintext hl_lines="4-12"
+	```{: .bash .no-copy }
 	 .
 	├──  db.sqlite3
 	├──  manage.py

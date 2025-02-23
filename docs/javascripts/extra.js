@@ -12,3 +12,4 @@ buttons.forEach(function(button) {
 		})
 	})
 })
+
