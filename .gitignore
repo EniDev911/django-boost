@@ -1,5 +1,5 @@
 Pipfile.lock
 venv/
-docs/assets/**/*.png
+docs/assets/images/**/*.png
 
 generated/

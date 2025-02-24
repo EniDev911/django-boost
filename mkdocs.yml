@@ -17,7 +17,7 @@ edit_uri: edit/main/docs/
 
 theme:
   name: material
-  favicon: assets/images/logo.png # logo: pending
+  favicon: assets/favicon.png # logo: pending
   icon:
     logo: material/home-city
     repo: material/github

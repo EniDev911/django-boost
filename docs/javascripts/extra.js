@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						});
 						if (platform.value === 'window') {
 							document.querySelector('.venv_so').style.display = 'none';
+							document.querySelector('.command_so').textContent = 'python';
 							document.querySelector('.venv_path').textContent = '.venv\\Scripts\\activate';
 						}
 						instrucciones.style.display = "block";
