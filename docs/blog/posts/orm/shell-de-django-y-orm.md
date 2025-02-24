@@ -80,7 +80,7 @@ Ahora podemos observar que la terminal entra en modo interactivo, invitandonos a
 	In [1]:
 	```
 ???+ info
-	Para salir del modo interactivo, debes escribir `exit()` o con la combinación de teclas <kbd>Ctrl</kbd> + <kbd>D</kbd>
+	Para salir del modo interactivo, debes escribir `exit()` o con la combinación de teclas ++ctrl+d++
 
 ## **Conceptos de  ORM de Django**
 
@@ -118,7 +118,7 @@ graph TD
 
 Antes de profundizar más en el shell de Django y los QuerySets del ORM, debemos crear una aplicación para poder definir un modelo y realizar operaciones en la base de datos.
 
-Asumiendo que ya en este punto, tienes el proyecto generado siguiendo los pasos anteriores en [crear un nuevo proyecto](#crear-un-nuevo-proyecto), continuamos con la configuración de una aplicación usando el archivo `manage.py`:
+Asumiendo que ya en este punto, tienes el proyecto generado siguiendo los pasos usando el [generador](#generador), continuamos con la configuración de una aplicación usando el archivo `manage.py`:
 
 ```bash title="terminal"
 python manage.py startapp fruits
@@ -127,7 +127,7 @@ python manage.py startapp fruits
 Ahora podemos definir un modelo abriendo el archivo `fruits/models.py` y definir el siguiente modelo:
 
 === "Modelo"
-	```py title="fuits/models.py"
+	```py title="fuits/models.py" linenums="1"
 	from django.db import models
 	
 	class FruitsInfo(models.Model):
@@ -143,7 +143,7 @@ Ahora podemos definir un modelo abriendo el archivo `fruits/models.py` y definir
 
 === "Explorador"
 	
-	```plaintext hl_lines="9"
+	```{ .plaintext hl_lines="9" .no-copy }
 	 .
 	├──  manage.py
 	├──  fruits
@@ -155,7 +155,7 @@ Ahora podemos definir un modelo abriendo el archivo `fruits/models.py` y definir
 	│   ├──  models.py
 	│   ├──  tests.py
 	│   └──  views.py
-	└──  mysite
+	└──  _site
 	```
 
 Luego debemos abrir el archivo `mysite/settings.py` y registrar la app generada:
@@ -165,8 +165,8 @@ Luego debemos abrir el archivo `mysite/settings.py` y registrar la app generada:
 	```plaintext hl_lines="7"
 	 .
 	├──  manage.py
-	├──  myapp
-	└──  mysite
+	├──  fruits
+	└──  _site
     	├──  __init__.py
     	├──  asgi.py
     	├──  settings.py
@@ -199,11 +199,11 @@ Luego generamos una nueva migración con el comando `makemigrations` y corremos 
 === "Output"
 
 	```plaintext hl_lines="1 5"
-	(venv) ➜  django_project python manage.py makemigrations
+	(venv) ➜ python manage.py makemigrations
 	Migrations for 'fruits':
 		fruits/migrations/0001_initial.py
 			- Create model FruitsInfo
-	(venv) ➜ django_project python manage.py makemigrations
+	(venv) ➜ python manage.py makemigrations
 	Operations to perform:
 		Apply all migrations: admin, auth, contenttypes, fruits, sessions
 	Running migrations:
@@ -239,12 +239,12 @@ Ahora para comenzar a realizar operaciones, vamos a ingresar al shell como lo vi
 python manage.py shell
 ```
 
-### Insertar :octicons-diff-added-16:
+### **Insertar :octicons-diff-added-16:**
 
 En Django, una clase modelo representa una tabla de base de datos y una instancia de esa clase representa un registro particular dentro de la base de datos. Esto es análogo a usar una sentencia [`INSERT` en SQL](https://en.wikipedia.org/wiki/Insert_(SQL)).
 
 
-#### método save()
+#### Método `save()`
 
 Se puede crear un registro simplemente instanciando la clase definida en el modelo usando los argumentos de palabras claves, luego debemos llamar al método `save()` y así confirmar el nuevo registro en la base de datos.
 
@@ -283,7 +283,7 @@ En el siguiente ejemplo, veremos que sencillo es agregar un nuevo registro a la 
 !!! info "Nota"
 	Si no recibimos mensajes de errores indicados en la consola de Django, podemos suponer que el registro se agregó correctamente
 
-#### método create()
+#### Método `create()`
 
 Otra forma de insertar un registro en una clase modelo es usar el método `create()`. Esto elimina la necesidad de llamar al método `save()` para confirmar el registro en la base de datos. El siguiente ejemplo muestra su uso:
 
@@ -312,7 +312,7 @@ Otra forma de insertar un registro en una clase modelo es usar el método `creat
 ???+ info
 	Si observamos el resultado en el shell, el método `create()` nos retorna un **QuerySet** con el objeto que acabamos de insertar.
 
-### Insertar múltiples registros
+### **Insertar múltiples registros**
 
 Ahora veremos cómo insertar varios registros en una clase específica. Creamos una nueva clase `FruitsVendor` dentro de :octicons-file-code-16: `models.py` en la aplicación:
 
@@ -330,7 +330,7 @@ Ahora veremos cómo insertar varios registros en una clase específica. Creamos 
 	```
 === "Explorador"
 	
-	```plaintext hl_lines="9"
+	```{ .plaintext hl_lines="9" .no-copy }
 	 .
 	├──  manage.py
 	├──  fruits
@@ -342,7 +342,7 @@ Ahora veremos cómo insertar varios registros en una clase específica. Creamos 
 	│   ├──  models.py
 	│   ├──  tests.py
 	│   └──  views.py
-	└──  mysite
+	└──  _site
 	```
 
 En la nueva clase `FruitsVendors`, hemos definido un campo con llave primaria llamado `vendor_id`. Luego, definimos el método `__str__()` para mostrar todos los datos dentro de la clase en una cadena con formato.
@@ -368,7 +368,7 @@ Generamos una nueva migración y las ejecutamos con el comando `migrate`:
   	Applying fruits.0002_fruitsvendor... OK
 	```
 
-#### método bulk_create()
+#### Método `bulk_create()`
 
 Ahora podemos volver al shell e insertar múltiples registros en la clase `FluitsVendors` a la vez usando el método `bulk_create()`. El siguiente ejemplo muestra su uso:
 
@@ -421,9 +421,9 @@ Ahora podemos volver al shell e insertar múltiples registros en la clase `Fluit
 
 Ahora que ya hemos guardado objetos en la base de datos, vamos a continuar con la operación de obtener esos registros.
 
-### Listar :octicons-list-unordered-16:
+### **Listar :octicons-list-unordered-16:**
 
-#### método all()
+#### Método `all()`
 
 Verificaremos esto utilizando el método `all()` que nos retorna un QuerySet que describe todos los objetos de la tabla en la base de datos:
 
@@ -474,7 +474,7 @@ El método `values()` permite extraer los valores de un objeto determinado como 
 	Out[2]: <QuerySet [{'vendor_id': 'V001', 'vendor_name': 'Fresh Fruits', 'vendor_location': 'New York'}, {'vendor_id': 'V002', 'vendor_name': 'Direct Delivery', 'vendor_location': 'Sao Paulo'}, {'vendor_id': 'V003', 'vendor_name': 'Fruit Mate', 'vendor_location': 'Sydney'}]>
 	```
 
-#### método get()
+#### Método `get()`
 
 Si quisieramos recuperar un solo registro, podemos usar el método `get()`. Sin embargo, si hay más de un registro que coincida con la consulta que especificamos dentro del método `get()`, esto dará como resultado un error `MultipleObjectsReturned`.
 
@@ -502,7 +502,7 @@ El método `get()` es más viable cuando buscamos utilizando campos con índices
 	Out[2]: <FruitsInfo: USA apple>
 	```
 
-### Búsquedas :octicons-search-16:
+### **Búsquedas :octicons-search-16:**
 
 En el ORM de Django, podemos especificar operadores para filtrar un conjunto. Esto es análogo a los operadores que se pueden especificar dentro de una declaración [`WHERE` de SQL](https://es.wikipedia.org/wiki/SQL#:~:text=Cl%C3%A1usula%20WHERE%20(Donde)). Algunos ejemplos de búsquedas de campos y sus operadores SQL correspondientes son:
 
