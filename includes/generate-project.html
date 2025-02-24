@@ -1,0 +1,66 @@
+<button class="md-button md-button--primary alerta" id="generador">Nuevo Proyecto {% include "assets/icons/code-review.svg" %}</button>
+
+<div class="instrucciones" style="display: none;">
+
+<h2><strong>Preparar el Escenario</strong></h2>
+
+<h3><strong>Instrucciones:</strong></h3>
+
+<strong>1. Crea una nueva carpeta y entra en ella</strong>
+
+<div class="highlight">
+    <span class="filename">terminal</span>
+    <pre id="__code_1" style="white-space: normal">
+        <button class="md-clipboard md-icon" title="Copiar al portapapeles" data-clipboard-target="#__code_1 > code"></button>
+        <code><span class="nb">mkdir</span> <span class="project_name">django_project</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="project_name">django_project</span></code>
+    </pre>
+</div>
+
+<strong>2. Crear un entorno virtual</strong>
+
+<div class="highlight">
+    <span class="filename">terminal</span>
+    <pre id="__code_2" style="white-space: normal">
+        <button class="md-clipboard md-icon" title="Copiar al portapapeles" data-clipboard-target="#__code_2 > code"></button>
+        <code><span class="nb command_so">python3</span> <span class="command_arg">-m venv venv</span></code>
+    </pre>
+</div>
+
+
+<strong>3. Activar entorno virtual</strong>
+
+<div class="highlight">
+    <span class="filename">terminal</span>
+    <pre id="__code_3" style="white-space: normal">
+        <button class="md-clipboard md-icon" title="Copiar al portapapeles" data-clipboard-target="#__code_3 > code"></button>
+        <code><span class="nb activate">source</span><span class="venv_path"> venv/bin/activate</span></code>
+    </pre>
+</div>
+
+<strong>4. Instalar Django</strong>
+
+```bash title="terminal"
+pip install django
+```
+
+<strong>5. Generar un nuevo proyecto de django</strong>
+
+```bash title="terminal"
+django-admin startproject _site .
+```
+
+<div class="highlight no-copy">
+<pre><code>
+ <span class="project_name">django_project</span>
+├──  venv
+├──  manage.py
+└──  _site
+    ├──  __init__.py
+    ├──  asgi.py
+    ├──  settings.py
+    ├──  urls.py
+    └──  wsgi.py
+</code></pre>
+</div>
+
+</div>
