@@ -16,10 +16,9 @@ Django es conocido por su rapidez en el desarrollo y su potente sistema de admin
 
 ## **Configurar el Panel Administrativo**
 
-Una vez que hayas creado tu proyecto, Django ya incluye un panel administrativo listo para usarse, pero para poder acceder a él debes asegurarte de haber realizado algunos pasos previos:
+Una vez que hayas creado y configurado tu proyecto, Django incluye un panel administrativo listo para usarse. Sin embargo, para acceder a él, es necesario completar algunos pasos previos:
 
 ### **1. Ejecutar Migraciones**
-
 
 ```bash title="terminal"
 python manage.py migrate

@@ -16,6 +16,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	const alertButtons = document.querySelectorAll('.alerta');
 	const nameProjectTexts = document.querySelectorAll('.project_name');
+	
 	alertButtons.forEach(function (button) {
 	  button.addEventListener('click', function () {
 		const swalCustomButton = Swal.mixin({
@@ -45,19 +46,21 @@ document.addEventListener('DOMContentLoaded', function () {
 						linux: "Linux, macOS",
 						window: "Windows"
 					},
-					inputLabel: 'Selecciona tu S.O'
+					inputLabel: 'Selecciona tu S.O',
+					animation: false
 				}).then((platform) => {
 					if (platform.isConfirmed) {
-						const instrucciones = document.querySelector(".instrucciones");
 						nameProjectTexts.forEach(function (element) {
 							element.innerHTML = name_project.value;
 						});
-						if (platform.value === 'window') {
-							document.querySelector('.venv_so').style.display = 'none';
-							document.querySelector('.command_so').textContent = 'python';
-							document.querySelector('.venv_path').textContent = '.venv\\Scripts\\activate';
-						}
-						instrucciones.style.display = "block";
+						const isWindow = platform.value === 'window';
+						const venv_path = isWindow ? '.\\venv\\Scripts\\activate' : 'venv/bin/activate';
+						const source = isWindow ? 'none' : 'inline-block';
+						const commmand_source = isWindow ? { python:'python', activate: ''} : {python:'python3', activate: 'source '};
+						document.querySelector('.venv_path').textContent = venv_path;
+						document.querySelector('.command_so').textContent = commmand_source.python;
+						document.querySelector('.activate').textContent = commmand_source.activate;
+						document.querySelector(".instrucciones").style.display = "block";
 					}
 				})
 			}
