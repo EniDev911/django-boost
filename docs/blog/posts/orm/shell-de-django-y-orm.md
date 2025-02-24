@@ -1,6 +1,12 @@
 ---
 date: 2024-05-15
 title: Shell de Django, ORM y QuerySets
+tags: ["orm", "querysets"]
+categories:
+  - Orm
+  - Modelos
+authors:
+  - mcherrera
 ---
 
 El **shell de Django** nos permite escribir declaraciones de Python desde la línea de comandos para interactuar con el proyecto de Django.
@@ -16,74 +22,19 @@ El __shell de Django__ es una interfaz de línea de comandos interactivo que com
 
 Una de las principales funciones que ofrece este shell es el fácil acceso al mapeador relacional de objetos (ORM), que permite al desarrollador interactuar directamente con la base de datos. El ORM es responsable de realizar consultas a la base de datos dentro de un proyecto de Django. El mapeador relacional de objetos reduce la necesidad de un amplio conocimiento de las bases de datos relacionales y elimina la necesidad de utilizar consultas SQL dentro del proyecto en la mayoría de los casos.
 
-## **Accediendo al Shell de Django**
-
 Se puede acceder al shell de Django mediante el comando `shell` en un proyecto de Django. Por ende es necesario tener un proyecto Django.
 
-### **Crear un nuevo proyecto**
+{% include "includes/generate-project.html" %}
 
-Si no tienes un proyecto creado y aún no tienes Django instalado, podemos realizar los siguietes pasos para generar uno nuevo:
-
-**1. Crear un nuevo directorio para el proyecto**
-
-Elige un destino para tu proyecto y luego crea un nuevo directorio con el nombre para el proyecto:
-
-```bash title="terminal"
-mkdir prueba-shell-django && cd prueba-shell-django
-```
-
-???+ info
-	Modifica el nombre por el que desees, el comando anterior simplemente está creando un nuevo directorio y entrando en ese directorio a la vez. En distribuciones basadas en Linux, el comando anterior se puede abreviar con `take prueba-shell-django`
-
-**2. Crear un entorno virtual**
-
-Existen muchas maneras de crear un entorno virtual, para efectos prácticos haremos uso del paquete **venv** incluido en la mayoría de instalaciones de Python:
-
-```bash title="terminal"
-python3 -m venv venv
-```
-
-**3. Activar entorno virtual**
-
-Una vez se crea el entorno virtual, observarás que se creó una nueva carpeta con el nombre de **venv** y dentro se encuentra una instalación limpia de Python que tenemos que activar para empezar a instalar los paquetes. Para ello debemos ejecutar el comando que corresponda según el sistema operativo que utilices:
-
-=== ":octicons-terminal-16: Linux, macOS"
-	```bash
-	source venv/bin/activate
-	```
-=== ":octicons-terminal-16: Windows"
-	```cmd
-	.venv\Scripts\activate
-	```
-
-**4. Instalar Django**
-
-Ahora que ya tenemos el entorno virtual creado y activado, podemos instalar django usando pip:
-
-```bash title="terminal"
-pip install django
-```
-
-**5. Generar un nuevo proyecto de django**
-
-Una vez instalado django, procedemos a generar un nuevo proyecto en el directorio actual:
-
-```bash title="terminal"
-django-admin startproject _site .
-```
+## **Accediendo al Shell de Django**
 
 Una vez generado el proyecto, tendrás disponible el archivo `manage.py` en el proyecto:
 
-```plaintext hl_lines="3" title="Archivos del proyecto"
- prueba-shell-django
+```{ .plaintext .no-copy hl_lines="3" title="Archivos del proyecto" }
+ .
 ├──  venv
 ├──  manage.py
-└──  mysite
-    ├──  __init__.py
-    ├──  asgi.py
-    ├──  settings.py
-    ├──  urls.py
-    └──  wsgi.py
+...
 ```
 
 Ahora podemos ejecutar el siguiente comando para ingresar al shell de Django:

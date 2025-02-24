@@ -350,7 +350,7 @@ pip install django-apptemplates
 **3. En el archivo `base_site.html` agregamos lo siguiente:**
 
 {% raw %}
-```html title="templates/admin/base_site.html" hl_lines="1"
+```html title="templates/admin/base_site.html" hl_lines="1 18"
 {% extends "admin_interface:admin/base_site.html" %}
 {% load i18n static admin_interface_tags %}
 {% block extrahead %}
@@ -378,17 +378,37 @@ pip install django-apptemplates
 
 ## **Formularios Personalizados**
 
+### **Sobrescribir plantillas de administración**
 
-```py title=":material-language-python:"
-def algo:
-    pass
+Django utiliza plantillas para renderizar las páginas del panel administrativo. Las plantillas deben estar ubicadas en el mismo orden para que funcionen.
+
+Por ejemplo, si deseas personalizar la plantilla de edición para el modelo `Group` (que viene por defecto), debes seguir estos pasos:
+
+1. Crea la carpeta `templates/admin/auth/group` en tu proyecto.
+2. Crea una nueva plantilla llamada `change_form.html` dentro de esa carpeta.
+
+
+```{ .bash .no-copy hl_lines="7" }
+ .
+├──  _site
+├──  templates
+│   └──  admin
+│       └──  auth
+│           └──  group
+│               └──  change_form.html
 ```
 
-<kbd>ctrl</kbd>
+Dentro de `change_form.html`, puedes sobrescribir la plantilla de edición del modelo `group` de la siguiente manera. Primero, extiendes la plantilla base del admin, y luego personalizas las partes que deseas cambiar:
 
+{% raw %}
+```html title="change_form.html" hl_lines="3"
+{% extends "admin/change_form.html" %} <!-- (1)! -->
+{% block content %}
+    <h2>Personalizado: Editar objeto</h2>
+    {{ block.super}} <!-- (2)! -->
+{% endblock %}
+```
 
-++ctrl+alt+del++
-
-Puedes crear formularios personalizados para tus modelos
-
-
+1. Esta línea indica que la plantilla actual está extendiéndose de la **plantilla base** `change_form.html` del panel administrativo de Django.
+2. El uso de `{{ block.super }}` **incluye** el contenido de la **plantilla base**. En este caso mantiene el formulario original de Django admin.
+{% endraw %}
