@@ -515,7 +515,7 @@ En el ORM de Django, podemos especificar operadores para filtrar un conjunto. Es
 
 Los siguientes ejemplos demuestran cómo podemos utilizar las búsquedas por atributos dentro de Django shell.
 
-#### operador - contains
+#### Operador - `contains`
 
 Busquemos nombres de proveedores que incluyan la palabra "Fruits" en la clase `FruitsVendor`:
 
@@ -542,7 +542,7 @@ Busquemos nombres de proveedores que incluyan la palabra "Fruits" en la clase `F
 	Out[2]: <QuerySet [<FruitsVendors: V001 - Fresh Fruits - New York>, <FruitsVendors: V003 - Fruit Mate - Sydney>]>
 	```
 
-#### operador - gte y lte
+#### Operador - `gte` y `lte`
 
 En los siguientes ejemplos, buscaremos registros usando los operadores de mayor y menor que:
 
@@ -568,7 +568,7 @@ En los siguientes ejemplos, buscaremos registros usando los operadores de mayor 
 	In [3]: FruitsInfo.objects.filter(energy__lte=250)
 	Out[3]: <QuerySet [<FruitsInfo: USA apple>]>
 	```
-#### operador - range
+#### Operador - `range`
 
 En los siguientes ejemplos, buscaremos registros usando los operadores de range:
 
@@ -595,7 +595,7 @@ En los siguientes ejemplos, buscaremos registros usando los operadores de range:
 	Out[3]: <QuerySet [<FruitsInfo: USA banana>, <FruitsInfo: USA apple>]>
 	```
 
-### Actualizar :octicons-sync-16:
+### **Actualizar :octicons-sync-16:**
 
 La operación de actualización se puede realizar junto con el método `filter()` para especificar el registro que se puede actualizar. Actualicemos el atributo `origin` al registro (`id=1`) en la tabla `FruitsInfo`:
 
@@ -635,11 +635,11 @@ La operación de actualización se puede realizar junto con el método `filter()
 	Out[4]: 'australia'
 	```
 
-### Eliminar :octicons-x-circle-16:
+### **Eliminar :octicons-x-circle-16:**
 
 El ORM nos ofrece el método `delete()` para eliminar registros de una clase específica. Esto es análogo a la instrucción [`DELETE` en SQL](https://en.wikipedia.org/wiki/Delete_(SQL))
 
-#### Eliminar un registro
+#### Eliminar un registro - Método `delete()`
 
 Al eliminar un solo registro, debemos utilizar el método `get()`, ya que devuelve directamente el objeto especificado. En el siguiente ejemplo eliminamos un registro (`id=3`) de la clase `FruitsInfo()`:
 
@@ -668,10 +668,9 @@ Al eliminar un solo registro, debemos utilizar el método `get()`, ya que devuel
 	<QuerySet [<FruitsInfo: australia apple>, <FruitsInfo: USA banana>]>
 	```
 
-#### Eliminar varios registros
+#### Eliminar varios registros - Método `delete()`
 
 El método `delete()` se puede utilizar para eliminar todos los registros de una clase determinada, simplemente especificando la operación de eliminación con el método `all()` para eliminar todos o `filter()` para eliminar un conjunto que cumpla una determinada condición. En el siguiente ejemplo, eliminaremos todos los registros:
-
 
 === "Python"
 	```python
