@@ -1,6 +1,7 @@
 ---
 date: 2024-05-15
 title: Shell de Django, ORM y QuerySets
+description: "El Shell De Django, una herramienta que es fundamental en la etapa de desarrollo y depuración"
 tags: ["orm", "querysets"]
 categories:
   - Orm
@@ -9,24 +10,24 @@ authors:
   - mcherrera
 ---
 
-El **shell de Django** nos permite escribir declaraciones de Python desde la línea de comandos para interactuar con el proyecto de Django.
+__El Shell De Django, es una herramienta esencial durante la etapa de desarrollo y depuración de tus proyectos, con acceso directo al ORM y QuerySets para realizar consultas a la base de datos.__
+
+Explora cómo el Shell de Django optimiza el desarrollo y depuración, permitiendo interactuar fácilmente con el ORM y realizar consultas a la base de datos mediante QuerySets. Aprende a manejar datos y objetos de tu proyecto con esta poderosa herramienta.
 
 <!-- more -->
 
-!!! tip Django
-	El shell de Django es muy potente, pero muchos desarrolladores principiantes subestiman su utilidad en el proceso de desarrollo y depuración.
+## __¿Qué es Django Shell?__
 
-## **¿Qué es esto de Django Shell?**
+El __shell de Django__ es una poderosa interfaz de línea de comandos interactiva que fusiona la flexibilidad de Python con la funcionalidad única de Django. Esta herramienta, que puede aprovecharse con la __shell de Python__, __iPython__, __bPython__ (estos dos últimos, requieren instalación adicional), carga automáticamente todos los parámetros y configuraciones de tu proyecto, permitiéndote trabajar de manera aislada y enfocada en el desarrollo de tu aplicación.
 
-El __shell de Django__ es una interfaz de línea de comandos interactivo que combina la funcionalidad del framework Django con el shell de Python, iPython, bPython (estos dos últimos, se deben instalar por aparte en la mayoría de los casos). El shell de Django carga los parámetros y las configuraciones específicas del proyecto, lo que permite aislar el entorno de trabajo y centrarse en el proyecto en particular.
+Una de las características más destacadas del shell de Django es su acceso directo al ORM (Object-Relational Mapper), una herramienta que te permite interactuar con la base de datos de manera sencilla y eficiente. Gracias al ORM, puedes realizar consultas a la base de datos __sin necesidad de escribir código SQL__, lo que simplifica enormemente el trabajo con bases de datos y elimina la necesidad de tener un amplio conocimiento de SQL.
 
-Una de las principales funciones que ofrece este shell es el fácil acceso al mapeador relacional de objetos (ORM), que permite al desarrollador interactuar directamente con la base de datos. El ORM es responsable de realizar consultas a la base de datos dentro de un proyecto de Django. El mapeador relacional de objetos reduce la necesidad de un amplio conocimiento de las bases de datos relacionales y elimina la necesidad de utilizar consultas SQL dentro del proyecto en la mayoría de los casos.
+## __Accediendo al Shell de Django__
 
-Se puede acceder al shell de Django mediante el comando `shell` en un proyecto de Django. Por ende es necesario tener un proyecto Django.
+Para acceder al shell de Django, solo necesitas ejecutar el comando `shell` en un proyecto de Django. Es necesario tener un proyecto de Django configurado y en marcha, si quieres comenzar a configurar un proyecto desde cero, utiliza la herramienta __Generar Nuevo Proyecto__.
 
 {% include "includes/generate-project.html" %}
 
-## **Accediendo al Shell de Django**
 
 Una vez generado el proyecto, tendrás disponible el archivo `manage.py` en el proyecto:
 
@@ -696,3 +697,4 @@ El método `delete()` se puede utilizar para eliminar todos los registros de una
 	>>> FruitsInfo.objects.all()
 	<QuerySet []>
 	```
+

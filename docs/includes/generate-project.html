@@ -1,4 +1,4 @@
-<button class="md-button md-button--primary alerta" id="generador">Nuevo Proyecto {% include "assets/icons/code-review.svg" %}</button>
+<button class="md-button md-button--primary alerta" id="generador">Generar Nuevo Proyecto {% include "assets/icons/code-review.svg" %}</button>
 
 <div class="instrucciones" style="display: none;">
 
@@ -6,8 +6,27 @@
 
 <h3><strong>Instrucciones:</strong></h3>
 
-<strong>1. Crea una nueva carpeta y entra en ella</strong>
+<div id="open_terminal"></div>
 
+<p><strong>1. Abrir la terminal de comandos:</strong></p>
+<ul>
+	<li>Presiona las teclas <span class="keys" id="key_1">#1</span> <span id="txt_1">para abrir la ventana de "Ejecutar".</span></li>
+	<li style="display: none;" id="extra_win1">Escribe <strong>cmd</strong> en el campo de texto y presiona <span class="keys"><kbd class="key-enter">Enter</kbd></span> o haz clic en "Aceptar". Esto abrirá la terminal de comandos de Windows (símbolo del sistema).</li>
+</ul>
+<p><strong>2. Navegar a la ubicación deseada:</strong></p>
+<ul>
+	<li>Una vez que tengas la terminal abierta, usa el comando <code>cd</code> (cambiar directorio) para navegar a la carpeta donde deseas crear tu proyecto Django.</li>
+</ul>
+<p>Por ejemplo, si deseas ir a la carpeta <strong>Documentos</strong>:</p>
+
+```{ .bash .docpath title="terminal" }
+cd ~/Documents/
+```
+
+<p><strong>3. Crea una nueva carpeta para el proyecto</strong></p>
+<ul>
+    <li>El siguiente comando crea la carpeta llamada <strong><span class="project_name"></span></strong> y entra en ella:</li>
+</ul>
 <div class="highlight">
     <span class="filename">terminal</span>
     <pre id="__code_1" style="white-space: normal">
@@ -16,8 +35,10 @@
     </pre>
 </div>
 
-<strong>2. Crear un entorno virtual</strong>
-
+<p><strong>4. Crear un entorno virtual</strong></p>
+<ul>
+    <li>Ejecuta el siguiente comando para crear un entorno virtual en la carpeta del proyecto:</li>
+</ul>
 <div class="highlight">
     <span class="filename">terminal</span>
     <pre id="__code_2" style="white-space: normal">
@@ -26,9 +47,10 @@
     </pre>
 </div>
 
-
-<strong>3. Activar entorno virtual</strong>
-
+<p><strong>5. Activar entorno virtual</strong></p>
+<ul>
+    <li>En <span class="platform">Windows</span>, activa el entorno virtual con el siguiente comando:</li>
+</ul>
 <div class="highlight">
     <span class="filename">terminal</span>
     <pre id="__code_3" style="white-space: normal">
@@ -37,19 +59,33 @@
     </pre>
 </div>
 
-<strong>4. Instalar Django</strong>
+<p><strong>6. Instalar Django en el entorno virtual</strong></p>
+
+<ul>
+    <li>Una vez que el entorno virtual está activado, instala Django con el siguiente comando:</li>
+</ul>
 
 ```bash title="terminal"
 pip install django
 ```
 
-<strong>5. Generar un nuevo proyecto de django</strong>
+<p><strong>7. Generar un nuevo proyecto de django</strong></p>
+
+<ul>
+    <li>Ahora, ejecuta el siguiente comando para crear el proyecto Django dentro de la <strong>carpeta principal <span class="project_name"></span></strong>:</li>
+</ul>
 
 ```bash title="terminal"
 django-admin startproject _site .
 ```
 
+<div class="admonition note">
+    <p class="admonition-title">Nota</p>
+    <p>El comando anterior evita crear una subcarpeta con el mismo nombre del proyecto y en su lugar se crea <code>_site</code> para todo los que tiene que ver con las configuraciones del proyecto.</p>
+</div>
+
 <div class="highlight no-copy">
+<span class="filename">estructura del proyecto</span>
 <pre><code>
  <span class="project_name">django_project</span>
 ├──  venv
