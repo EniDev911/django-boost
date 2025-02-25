@@ -81,21 +81,21 @@ django-admin startproject _site .
 
 <div class="admonition note">
     <p class="admonition-title">Nota</p>
-    <p>El comando anterior evita crear una subcarpeta con el mismo nombre del proyecto y en su lugar se crea <code>_site</code> para todo los que tiene que ver con las configuraciones del proyecto.</p>
+    <p>El comando anterior evita crear una subcarpeta con el mismo nombre del proyecto. En su lugar, genera una carpeta llamada <code>_site</code>, que alberga todos los archivos relacionados con la configuración del proyecto.</p>
 </div>
 
 <div class="highlight no-copy">
 <span class="filename">estructura del proyecto</span>
 <pre><code>
  <span class="project_name">django_project</span>
+├──  _site
+│   ├──  __init__.py
+│   ├──  asgi.py
+│   ├──  settings.py
+│   ├──  urls.py
+│   └──  wsgi.py
 ├──  venv
-├──  manage.py
-└──  _site
-    ├──  __init__.py
-    ├──  asgi.py
-    ├──  settings.py
-    ├──  urls.py
-    └──  wsgi.py
+└──  manage.py
 </code></pre>
 </div>
 
